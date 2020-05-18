@@ -1,0 +1,35 @@
+npm install -g @angular/cli
+ng new alurapic
+ng --version
+cd alurapic
+ng serve --open
+
+-------------
+ERROR in node_modules/rxjs
+npm install rxjs@6.0.0 --save
+-------------
+
+- Angular utiliza a linguagem typescript
+- localhost:4200
+- tudo é um componente em angular, que guarda: 
+comportamento, o CSS, e a marcação HTML, a estrutura, em um único local
+- @Component, Decorator que torna a classe um componente
+- metainformação
+- selector: 'app-root' ---   <app-root></app-root>
+- selector nos permite utilizar o componente em templates em sua forma declarativa, 
+então, todo o conteúdo de app.component.ts, sua apresentação, o que ele faz, 
+seu CSS, são acessados por meio dele.
+- Angular utiliza um webpack, um module bundle, isto é, um empacotador de módulos famoso, 
+utilizado por Create React App, Vue CLI, e outros frameworks Single Page Application.  
+Mas nenhum momento estas configurações do webpack são exibidas, 
+pois elas ficam encapsuladas pelo Angular CLI.
+
+- {{ title }} -> Angular expression (AE) e dentro expressão
+- Data binding, ou "associação de dados"
+- One way data binding ("data binding unidirecional")
+- Quando formos realizar Data binding com atributos HTML do nosso component, 
+usaremos os colchetes. E quando formos exibir um valor em uma tag, ou isoladamente, 
+usaremos uma Angular Expression.
+- Utilizamos {{ }} dentro de tags e [ ] para atributos
+- menubar.component.ts -> MenubarComponent
+- https://angular.io/
