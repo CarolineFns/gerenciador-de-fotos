@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'alurapic';
-  url = 'https://cdn.domtotal.com/img/noticias/2019-03/1331528_394055.jpg'
-  description = 'Leão';
+  photos = [
+    {
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sultan_the_Barbary_Lion.jpg/440px-Sultan_the_Barbary_Lion.jpg',
+      description: 'Leão'
+    },
+    {
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Lioness_Etosha_NP.jpg/500px-Lioness_Etosha_NP.jpg',
+      description: 'Leoa'
+    },
+    {
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Lioness_Etosha_NP.jpg/500px-Lioness_Etosha_NP.jpg',
+      description: 'Leoa'
+    }
+  ];
 }

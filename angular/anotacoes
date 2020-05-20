@@ -33,3 +33,32 @@ usaremos uma Angular Expression.
 - Utilizamos {{ }} dentro de tags e [ ] para atributos
 - menubar.component.ts -> MenubarComponent
 - https://angular.io/
+
+- npm install bootstrap@4.1.1
+- angular.json
+"styles": [
+    "src/styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": []
+- <img class="img-thumbnail" [src]="url" [alt]="title">
+
+- um componente obrigatoriamente precisa fazer parte de um módulo.
+- O módulo, é uma forma de organizarmos a nossa aplicação
+- app.module.ts é o primeiro módulo a ser carregado
+- <ap-photo url="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Lioness_Etosha_NP.jpg/500px-Lioness_Etosha_NP.jpg" description="Leoa"></ap-photo>
+- @Input() -> receber um parâmetro externo, passando um valor por meio da forma declarativa do componente
+- Inbound properties, ou seja, aceitam receber um valor por meio de sua forma declarativa.
+
+- feature module
+- @NgModule
+@NgModule({
+    declarations: [ PhotoComponent ],
+    exports: [ PhotoComponent ]
+})
+<ap-photo
+    *ngFor="let photo of photos"
+    [url]="photo.url"
+    [description]="photo.description"
+>
+</ap-photo>
