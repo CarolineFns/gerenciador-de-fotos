@@ -68,6 +68,16 @@ usaremos uma Angular Expression.
 - Web API - servidor que tem a responsabilidade de 
 fornecer os dados para a aplicação Angular em uma Single Page Application
 - import { HttpClientModule } from '@angular/common/http';
+
+- ao criarmos um serviço, usamos @Injectable(),
+indica que a classe é injetável, ou seja, pode receber HttpClient e outros.
+
 - http
     .get<Object[]>('http://localhost:3000/flavio/photos')
     .subscribe(photos => this.photos = photos);
+- @Injectable({ providedIn: 'root' }) -> configuracao pra indicar um escopo raiz
+- "Rename Symbol"
+
+- constructor(private photoService: PhotoService){}
+- ngOnInit(): void {}
+- export class AppComponent implements OnInit 
