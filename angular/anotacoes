@@ -62,3 +62,12 @@ usaremos uma Angular Expression.
     [description]="photo.description"
 >
 </ap-photo>
+
+- npm install
+- npm start
+- Web API - servidor que tem a responsabilidade de 
+fornecer os dados para a aplicação Angular em uma Single Page Application
+- import { HttpClientModule } from '@angular/common/http';
+- http
+    .get<Object[]>('http://localhost:3000/flavio/photos')
+    .subscribe(photos => this.photos = photos);
