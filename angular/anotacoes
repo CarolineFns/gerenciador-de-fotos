@@ -81,3 +81,43 @@ indica que a classe é injetável, ou seja, pode receber HttpClient e outros.
 - constructor(private photoService: PhotoService){}
 - ngOnInit(): void {}
 - export class AppComponent implements OnInit 
+
+- configuracao pra import de aspas simples
+"javascript.preferences.quoteStyle":"single",
+"typescript.preferences.quoteStyle": "single"
+
+- ng generate component photos/photo-list
+
+- CommonModule é uma boa prática importar em todos os modules pois
+importa as diretrizas do angular como *ngFor e outras, disponíveis.
+- O CommonModule possui todas as diretivas básicas como NgIf, NgFor, NgForOf etc
+- O BrowserModule só deve ser importado no modulo principal da aplicação.
+- O BrowserModule possui funcionalidades essenciais para rodar e iniciar a aplicação.
+
+- RouterModule
+- AppRoutingModule
+- import { AppRoutingModule } from './app.routing.module';
+const routes: Routes = [
+    { path: 'user/flavio', component: PhotoListComponent },
+    { path: 'p/add', component: PhotoFormComponent }
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(routes)
+    ],
+    exports: [ RouterModule ]
+})
+
+ Sendo nossa aplicação localhost:4200, tudo o que for 4200/ 
+ terá relação com a rota raiz. Então, o resultado de forRoot() 
+ será importado, e levará em consideração esta lista de rotas (RouterModule).
+
+ - ng generate module errors
+ - ng generate component errors/not-found
+ - { path: '**', component: NotFoundComponent }
+ -     { path: 'user/:userName', component: PhotoListComponent },
+ - const userName = this.activatedRoute.snapshot.params.userName;
+ - private activatedRoute: ActivatedRoute
+
+
