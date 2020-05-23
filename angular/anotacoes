@@ -120,4 +120,34 @@ const routes: Routes = [
  - const userName = this.activatedRoute.snapshot.params.userName;
  - private activatedRoute: ActivatedRoute
 
+<ol class="list-unstyled row">
+    <li *ngFor="let cols of rows" class="row">
+        <div *ngFor="let photo of cols" class="col-4">
+            <ap-photo
+                [url]="photo.url"
+                [description]="photo.description">
+            </ap-photo>
+        </div>
+    </li>
+</ol>
+
+groupColumns(photos: Photo[]){
+    const newRows = [];
+      for(let index = 0; index < photos.length; index+=3){
+        newRows.push( photos.slice(index, index + 3));
+      }
+      return newRows;
+  }
+
+- OnChanges
+- ngOnChanges
+- Um objeto do tipo SimpleChanges possui uma propriedade de 
+mesmo nome da inbound property que sofreu mudança.
+- O método ngOnChanges, quando chamado pelo próprio framework, 
+recebe como parâmetro uma instância de SimpleChanges
+- if(changes.photos)
+
+
+
+
 
