@@ -169,3 +169,23 @@ recebe como parâmetro uma instância de SimpleChanges
 unidirecional
 [] -> data binding -> componente para o template
 () -> event binding -> view para o componente
+
+- Pipes -> podem gerar transformações nos dados, e podemos criar os nossos. 
+- {{ nome | uppercase }}
+- <ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>
+export class FilterByDescrition implements PipeTransform{
+    transform(photos: Photo[], descriptionQuery: string){
+        descriptionQuery = descriptionQuery
+            .trim()
+            .toLowerCase();
+
+        if(descriptionQuery)
+            return photos.filter(
+                photo => photo.description
+                    .toLowerCase()
+                    .includes(descriptionQuery));
+        else
+            return photos;
+    }
+}
+<p class="text-center text-muted" *ngIf="!photos.length">
