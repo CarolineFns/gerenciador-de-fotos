@@ -147,7 +147,25 @@ mesmo nome da inbound property que sofreu mudança.
 recebe como parâmetro uma instância de SimpleChanges
 - if(changes.photos)
 
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input
+            class="rounded"
+            type="search"
+            placeholder="search..."
+            autofocus
+            (keyup)="filter = $event.target.value"
+            >
+    </form>
+</div>
+{{ filter }}
+<ap-photos [photos]="photos"></ap-photos>
 
+- mt-3 margin top 
+- mb-3 margin bottom
 
+- Event binding -> ()
 
-
+unidirecional
+[] -> data binding -> componente para o template
+() -> event binding -> view para o componente
