@@ -189,3 +189,21 @@ export class FilterByDescrition implements PipeTransform{
     }
 }
 <p class="text-center text-muted" *ngIf="!photos.length">
+
+- PhotoListResolver
+- é necessário configurar o Resolver na rota correspondente da aplicação.
+- this.photos = this.activatedRoute.snapshot.data['photos'];
+- const routes: Routes = [
+    { 
+        path: 'user/:userName', 
+        component: PhotoListComponent,
+        resolve: {
+            photos: PhotoListResolver
+        }
+     },
+];
+
+- resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Photo[]>  {
+        return this.service.listFromUser(route.params.userName);}
+
+- export class PhotoListResolver implements Resolve<Observable<Photo[]>>{
