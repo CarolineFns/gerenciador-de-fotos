@@ -207,3 +207,11 @@ export class FilterByDescrition implements PipeTransform{
         return this.service.listFromUser(route.params.userName);}
 
 - export class PhotoListResolver implements Resolve<Observable<Photo[]>>{
+
+- Subject -> pode-ser emitir um valor e escutá-lo
+- debounce: Subject<string> = new Subject<string>();
+- import { debounceTime } from 'rxjs/operators';
+- this.debounce.pipe(debounceTime(300)).subscribe(filter => this.filter = filter);
+- this.debounce.unsubscribe();
+- (keyup)="debounce.next($event.target.value)"
+- Lettable operators
