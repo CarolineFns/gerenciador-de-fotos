@@ -215,3 +215,15 @@ export class FilterByDescrition implements PipeTransform{
 - this.debounce.unsubscribe();
 - (keyup)="debounce.next($event.target.value)"
 - Lettable operators
+
+listFromUserPaginated(userName: string, page: number) {
+        const params = new HttpParams()
+            .append('page', page.toString());
+        return this.http
+            .get<Photo[]>(API + '/' + userName + '/photos', { params });
+    }
+
+- ng g c photos/photo-list/load-button
+- *ngIf="hasMore; else messageTemplate"
+- <ng-template #messageTemplate>
+
