@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+
 import { Photo } from '../../photo/photo';
 
 @Component({
@@ -7,11 +8,10 @@ import { Photo } from '../../photo/photo';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnChanges {
-
   @Input() photos: Photo[] = [];
   rows: any[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes.photos)
