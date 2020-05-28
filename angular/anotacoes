@@ -231,3 +231,6 @@ listFromUserPaginated(userName: string, page: number) {
 - "./node_modules/font-awesome/css/font-awesome.css"
 - <i aria-hidden="true" class="fa fa-search mr-1"></i>
 - class="row no-gutters" -> para tirar os espaços
+
+Precisamos indicar, no elemento pai, o local no qual os elementos filhos 
+serão adicionados e fazemos isso através de ng-content.
