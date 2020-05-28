@@ -234,3 +234,14 @@ listFromUserPaginated(userName: string, page: number) {
 
 Precisamos indicar, no elemento pai, o local no qual os elementos filhos 
 serão adicionados e fazemos isso através de ng-content.
+
+<ap-search 
+    (onTyping)="filter = $event" 
+    [value]="filter">
+</ap-search>
+- @Output() onTyping = new EventEmitter<string>(); 
+- O nome da output property é o mesmo nome do evento utilizado por 
+aqueles que desejam interagir com o componente.
+- São propriedades decoradas com o decorator Output.
+- Não basta aplicar um decorator específico, é necessário que a propriedade 
+seja uma instância de EventEmitter.
