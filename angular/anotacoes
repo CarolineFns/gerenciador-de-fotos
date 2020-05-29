@@ -245,3 +245,14 @@ aqueles que desejam interagir com o componente.
 - São propriedades decoradas com o decorator Output.
 - Não basta aplicar um decorator específico, é necessário que a propriedade 
 seja uma instância de EventEmitter.
+
+-  diretiva, Custom Directive
+- Todo componente é uma diretiva. 
+A diferença é que @Component, por exemplo, 
+está atrelado a um template, o que não ocorre com a diretiva.
+
+<h1 style="background: red" apDarkenOnHover>Photos</h1>
+diretiva pode receber parâmetros, assim como componentes.
+this
+        .render
+        .setStyle(this.el.nativeElement, 'filter', `brightness(${this.brightness})`);
