@@ -251,8 +251,13 @@ seja uma instância de EventEmitter.
 A diferença é que @Component, por exemplo, 
 está atrelado a um template, o que não ocorre com a diretiva.
 
-<h1 style="background: red" apDarkenOnHover>Photos</h1>
-diretiva pode receber parâmetros, assim como componentes.
-this
-        .render
-        .setStyle(this.el.nativeElement, 'filter', `brightness(${this.brightness})`);
+- <h1 style="background: red" apDarkenOnHover>Photos</h1>
+- diretiva pode receber parâmetros, assim como componentes.
+- this.render.setStyle(this.el.nativeElement, 'filter', `brightness(${this.brightness})`);
+- Todo componente é uma diretiva que possui template. 
+No entanto, uma diretiva em seu estado bruto não possui templates.
+- Podemos usar uma diretiva como atributo envolvendo o 
+valor do seu seletor entre colchetes.
+- Podemos injetar no constructor da diretiva uma referência para o elemento 
+no qual ela foi associada. Angular nos dá acesso ao elemento 
+através do wrapper ElementRef. (para manipulação do DOM)
