@@ -278,3 +278,4 @@ login associado à diretiva formGroup
  precisa coincidir com o loginForm de signin.component.ts
 - *ngIf="loginForm.get('password').errors?.required"
 - [disabled]="loginForm.invalid"
+
