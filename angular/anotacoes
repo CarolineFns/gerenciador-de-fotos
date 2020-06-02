@@ -261,3 +261,20 @@ valor do seu seletor entre colchetes.
 - Podemos injetar no constructor da diretiva uma referência para o elemento 
 no qual ela foi associada. Angular nos dá acesso ao elemento 
 através do wrapper ElementRef. (para manipulação do DOM)
+
+---------------------------- PARTE 2 ------------------------
+- Model Driven Forms -> regra de validação ficará no componente
+- import { ReactiveFormsModule } from '@angular/forms';
+- FormGroup -> controlar o formulário da tela
+- quem controlará o formulário é a validação do 
+login associado à diretiva formGroup
+- FormBuilder
+- this.loginForm = this.formBuilder.group({
+            userName: [],
+            password: []
+        });
+- formControlName="password"
+- serName de signin.component.html
+ precisa coincidir com o loginForm de signin.component.ts
+- *ngIf="loginForm.get('password').errors?.required"
+- [disabled]="loginForm.invalid"
