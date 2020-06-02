@@ -261,3 +261,5 @@ valor do seu seletor entre colchetes.
 - Podemos injetar no constructor da diretiva uma referência para o elemento 
 no qual ela foi associada. Angular nos dá acesso ao elemento 
 através do wrapper ElementRef. (para manipulação do DOM)
+
+status
