@@ -279,3 +279,6 @@ login associado à diretiva formGroup
 - *ngIf="loginForm.get('password').errors?.required"
 - [disabled]="loginForm.invalid"
 
+- ng g s core/auth
+- O serviço já se encontra com o @Injectable e providedIn: 'root', 
+o que quer dizer que teremos uma única instância para a aplicação inteira
