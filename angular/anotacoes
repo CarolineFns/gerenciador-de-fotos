@@ -282,3 +282,25 @@ login associado à diretiva formGroup
 - ng g s core/auth
 - O serviço já se encontra com o @Injectable e providedIn: 'root', 
 o que quer dizer que teremos uma única instância para a aplicação inteira
+login() {
+        const userName = this.loginForm.get('userName').value;
+        const password = this.loginForm.get('password').value;
+
+        this.authService
+            .authenticate(userName, password)
+            .subscribe(
+                () => console.log('autenticado'),
+                err => {
+                    console.log(err);
+                    this.loginForm.reset();
+                    alert('Invalid user name or password');
+                }
+            );
+        }
+
+         authenticate(userName: string, password: string) {
+    return this.http.post(API_URL + '/user/login', { userName, password } )
+  }
+
+-this.router.navigateByUrl('user/' + userName)
+- this.router.navigate(['user', userName])
