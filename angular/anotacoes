@@ -308,3 +308,8 @@ login() {
 - @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
 - #userNameInput
 - this.userNameInput.nativeElement.focus();
+
+- constructor(@Inject(PLATFORM_ID) private platformId: string){}
+- import { isPlatformBrowser } from '@angular/common';
+- this.platformDetectorService.isPlatformBrowser() &&
+- this.userNameInput.nativeElement.focus();
