@@ -304,3 +304,7 @@ login() {
 
 -this.router.navigateByUrl('user/' + userName)
 - this.router.navigate(['user', userName])
+
+- @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
+- #userNameInput
+- this.userNameInput.nativeElement.focus();
