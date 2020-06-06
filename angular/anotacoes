@@ -328,3 +328,5 @@ console.log(`User ${userName} authenticated with token ${authToken}`)
     }))
   }
 
+- window.localStorage.setItem(KEY, authToken)
+- window.localStorage.getItem(KEY);
