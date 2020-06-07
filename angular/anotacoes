@@ -337,3 +337,15 @@ console.log(`User ${userName} authenticated with token ${authToken}`)
 É utilizada uma frase secreta para gerar e criptografar o token. 
 Então é possível descriptografá-lo, mas para criptografá-lo 
 novamente e ele ser um token válido, é necessário saber a frase secreta.
+
+- descriptografar o token
+- npm install jwt-decode@2.2.0
+-  getUser(){
+        return this.userSubject.asObservable();
+    }
+    const user = jwt_decode(token) as User;
+        this.userSubject.next(user);
+
+    private userSubject = new BehaviorSubject<User>(null);
+- guarda o ultimo valor pra quem fazer o subscrive, não se perde igual o subscribe
+- O BehaviorSubject armazena a última emissão até que alguém apareça para consumi-la.
