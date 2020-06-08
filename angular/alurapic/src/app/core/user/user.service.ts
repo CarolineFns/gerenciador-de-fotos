@@ -4,13 +4,15 @@ import { BehaviorSubject } from 'rxjs';
 import * as jwt_decode from 'jwt-decode';
 
 import { User } from './user';
+import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 export class UserService {
 
     private userSubject = new BehaviorSubject<User>(null);
 
-    constructor(private tokenService: TokenService){
+    constructor(
+        private tokenService: TokenService) {
         this.tokenService.hasToken() &&
         this.decodeAndNotify();
     }
@@ -30,5 +32,8 @@ export class UserService {
         this.userSubject.next(user);
     }
 
-
+    logout() {
+        this.tokenService.removeToken();
+        this.userSubject.next(null);
+    }
 }
