@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { UserService } from '../user/user.service';
 import { User } from '../user/user';
@@ -9,9 +10,9 @@ import { User } from '../user/user';
 })
 export class HeaderComponent {
 
-    user: User;
+    user$: Observable<User>;
 
     constructor(userService: UserService){
-        userService.getUser().subscribe(user => this.user = user);
+        this.user$ = userService.getUser();
     }
 }
