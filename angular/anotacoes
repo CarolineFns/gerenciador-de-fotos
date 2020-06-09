@@ -358,4 +358,18 @@ diretamente do nosso template.
 - this.router.navigate(['']);
 - this.userSubject.next(null);
 
+- Route Guards
+canActivate(
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): 
+        boolean | Observable<boolean> | Promise<boolean> {
+    
+            if(this.userService.isLogged()){
+                this.router.navigate(['user', this.userService.getUserName()])
+                return false;
+            }
+            return true;
+    }
+implements CanActivate
+
 
