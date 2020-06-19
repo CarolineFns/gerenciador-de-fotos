@@ -374,3 +374,5 @@ implements CanActivate
 
 
     <a [routerLink]="['']">Please, login!</a>
+
+só um teste.
