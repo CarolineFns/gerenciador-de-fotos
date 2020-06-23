@@ -395,3 +395,6 @@ o formulário já fez tudo que precisava fazer
                 .pipe(map(isTaken => isTaken ? { userNameTaken: true } : null))
                 .pipe(first());
         }
+
+- adicionando user -> return this.http.post(API_URL + '/user/signup', newUser);
+- const newUser = this.signupForm.getRawValue() as NewUser; -> Traz todos os campos do form
