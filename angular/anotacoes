@@ -379,3 +379,19 @@ implements CanActivate
 - Validators.pattern(/^[a-z0-9_\-]+$/) -> Pra começar com letra minuscula e não pode começar com numero
 - AbstractControl -> sempre se usa em validador
 -  if(control.value.trim() && !/^[a-z0-9_\-]+$/.test(control.value)) {}
+
+- validação assíncrona -> foi vai acessar o backend
+- [disabled]="signupForm.invalid || signupForm.pending"
+- Sempre que usar a validação assincrona precisa usar o pending pra ver se 
+o formulário já fez tudo que precisava fazer
+- 
+ return (control: AbstractControl) => {
+            return control
+                .valueChanges
+                .pipe(debounceTime(300))
+                .pipe(switchMap(userName =>
+                    this.signUpService.checkUserNameTaken(userName)
+                ))
+                .pipe(map(isTaken => isTaken ? { userNameTaken: true } : null))
+                .pipe(first());
+        }
