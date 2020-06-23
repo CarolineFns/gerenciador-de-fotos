@@ -377,3 +377,5 @@ implements CanActivate
 
 - Model Driven Forms -> signupForm de tipo FormGroup
 - Validators.pattern(/^[a-z0-9_\-]+$/) -> Pra começar com letra minuscula e não pode começar com numero
+- AbstractControl -> sempre se usa em validador
+-  if(control.value.trim() && !/^[a-z0-9_\-]+$/.test(control.value)) {}
