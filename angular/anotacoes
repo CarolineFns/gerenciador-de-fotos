@@ -398,3 +398,6 @@ o formulário já fez tudo que precisava fazer
 
 - adicionando user -> return this.http.post(API_URL + '/user/signup', newUser);
 - const newUser = this.signupForm.getRawValue() as NewUser; -> Traz todos os campos do form
+
+- Router outlet -> permite que uma rota exiba o resultado de outra rota também, rotas filhas
+
