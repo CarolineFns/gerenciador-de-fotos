@@ -408,3 +408,6 @@ this.cdRef.detectChanges();
 HTML5 mode
 # -> hash não dispara o carregamento na mudança do location, no back end
 RouterModule.forRoot(routes, { useHash: true } )
+
+ separação de código do nosso sistema -> Code splitting.
+ Lazy loading, em tradução livre, "carregamento preguiçoso".
