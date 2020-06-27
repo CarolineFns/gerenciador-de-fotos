@@ -401,3 +401,5 @@ o formulário já fez tudo que precisava fazer
 
 - Router outlet -> permite que uma rota exiba o resultado de outra rota também, rotas filhas
 
+- private cdRef: ChangeDetectorRef
+this.cdRef.detectChanges();
