@@ -411,3 +411,13 @@ RouterModule.forRoot(routes, { useHash: true } )
 
  separação de código do nosso sistema -> Code splitting.
  Lazy loading, em tradução livre, "carregamento preguiçoso".
+
+{
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+},
+RouterModule.forChild(routes)
+loadChildren: () => import('src/app/home/home.module').then(m => m.HomeModule) 
+
+
