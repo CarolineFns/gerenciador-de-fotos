@@ -403,3 +403,8 @@ o formulário já fez tudo que precisava fazer
 
 - private cdRef: ChangeDetectorRef
 this.cdRef.detectChanges();
+
+-ng build --prod
+HTML5 mode
+# -> hash não dispara o carregamento na mudança do location, no back end
+RouterModule.forRoot(routes, { useHash: true } )
