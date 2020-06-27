@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -21,7 +21,8 @@ export class SignUpComponent implements OnInit{
         private userNotTakenValidatorService: UserNotTakenValidatorService,
         private signUpService: SignUpService,
         private router: Router,
-        private platformDetectorService: PlatformDetectorService) {}
+        private platformDetectorService: PlatformDetectorService,
+        private cdRef: ChangeDetectorRef) {}
    
     ngOnInit(): void {
        this.signupForm = this.formBuilder.group({
@@ -55,8 +56,12 @@ export class SignUpComponent implements OnInit{
                 ]
             ]
        });
+    }
 
-       this.platformDetectorService.isPlatformBrowser() && this.emailInput.nativeElement.focus();
+    ngAfterViewInit(): void {
+        this.platformDetectorService.isPlatformBrowser() &&
+       this.emailInput.nativeElement.focus();
+        this.cdRef.detectChanges();
     }
 
     signup() {
