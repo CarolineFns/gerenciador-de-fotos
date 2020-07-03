@@ -420,4 +420,21 @@ RouterModule.forRoot(routes, { useHash: true } )
 RouterModule.forChild(routes)
 loadChildren: () => import('src/app/home/home.module').then(m => m.HomeModule) 
 
+Em uma Single Page Application, é comum lidarmos com isso:
+ na primeira etapa, efetua-se o login, recebe-se o token, 
+ que é guardado no browser e enviado para todas as requisições posteriores. 
+
+ interceptadores do Http Client
+ HttpInterceptor
+ return next.handle(req);
+providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: RequestInterceptor,
+            multi: true
+        }
+    ]
+ O multi: true serve para quando houver mais de um interceptador,
+  para que seja delegado sucessivamente.
+
 
