@@ -437,4 +437,5 @@ providers: [
  O multi: true serve para quando houver mais de um interceptador,
   para que seja delegado sucessivamente.
 
-
+ <input formControlName="file" type="file" accept="image/*" (change)="file = $event.target.files[0]">
+ 
