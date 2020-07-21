@@ -438,4 +438,5 @@ providers: [
   para que seja delegado sucessivamente.
 
  <input formControlName="file" type="file" accept="image/*" (change)="file = $event.target.files[0]">
- 
+
+ const formData = new FormData(); usa formData pra fazer o post por causa do file, então nesse caso não usa o json
