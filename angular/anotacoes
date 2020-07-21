@@ -442,3 +442,5 @@ providers: [
  const formData = new FormData(); usa formData pra fazer o post por causa do file, então nesse caso não usa o json
 
 @Input() set url(url: string) {} -> input ja implementando o set
+
+(click)="fileInput.click()" #fileInput
