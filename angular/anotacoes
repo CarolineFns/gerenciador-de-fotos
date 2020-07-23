@@ -444,3 +444,6 @@ providers: [
 @Input() set url(url: string) {} -> input ja implementando o set
 
 (click)="fileInput.click()" #fileInput
+
+<a [routerLink]="['p', photo.id]">
+ <a [routerLink]="['/p', photo.id]"> -> voltar pro inicio da aplicação pra não concatenar o caminho
