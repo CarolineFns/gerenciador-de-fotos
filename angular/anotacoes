@@ -455,3 +455,12 @@ this.comments$ = this.photoService
 .pipe(tap(() => {
     this.commentForm.reset();
 }));
+O operador switchMap cancela o Observable anterior passando o 
+fluxo para um novo Observable, 
+garantindo assim que a emissão tenha apenas o valor
+ emitido pelo Observable retornado por switchMap.
+
+this.activatedRoute.params.subscribe(params => {
+this.userName = params.userName;
+this.photos = this.activatedRoute.snapshot.data['photos'];
+});
