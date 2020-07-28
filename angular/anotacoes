@@ -449,3 +449,9 @@ providers: [
  <a [routerLink]="['/p', photo.id]"> -> voltar pro inicio da aplicação pra não concatenar o caminho
 
 import { switchMap, tap } from 'rxjs/operators';
+this.comments$ = this.photoService
+.addComment(this.photoId, comment)
+.pipe(switchMap(() => this.photoService.getComments(this.photoId)))
+.pipe(tap(() => {
+    this.commentForm.reset();
+}));
