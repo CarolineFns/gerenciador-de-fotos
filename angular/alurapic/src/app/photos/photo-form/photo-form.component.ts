@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { PhotoService } from '../photo/photo.service';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
+import { UserService } from 'src/app/core/user/user.service';
 
 @Component({
   selector: 'ap-photo-form',
@@ -20,7 +21,8 @@ export class PhotoFormComponent implements OnInit{
     private formBuilder: FormBuilder,
     private photoService : PhotoService,
     private router: Router,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private userService: UserService
     ) {}
   
   ngOnInit(): void {
@@ -38,12 +40,12 @@ export class PhotoFormComponent implements OnInit{
       .upload(description, allowComments, this.file)
       .subscribe(
             () => {
-              this.router.navigate(['']);
-              this.alertService.sucess("Photo successfully added!");
+              this.alertService.sucess("Upload complete!", true);
+              this.router.navigate(['/user', this.userService.getUserName()]);
             },
             err => {
               console.log(err);
-              this.alertService.warning("Could not delete the photo!");
+              this.alertService.warning("Could not delete the photo!", true);
             }
           );
   }
