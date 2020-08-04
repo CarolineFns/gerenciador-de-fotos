@@ -2,7 +2,6 @@ import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
 
 import { Photo } from '../../photo/photo';
 import { UserService } from 'src/app/core/user/user.service';
-import { timeStamp } from 'console';
 
 @Directive({
     selector: '[photoOwnerOnly]'
