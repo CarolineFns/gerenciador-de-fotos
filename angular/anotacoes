@@ -472,3 +472,15 @@ export class Alert {
         public readonly message: string
     ) {}
 }
+
+err.status == '304' ? of(false) : throwError(err);
+ através da função of podemos criar um Observable de um tipo qualquer. 
+ import { of } from 'rxjs';
+
+function myFunc(number: number) {
+    return number % 2 ? of('impar') : of('par')
+}
+
+myFunc(10).subscribe(msg => alert(msg));
+
+catchError -> permite fazer o tratamento de um erro
