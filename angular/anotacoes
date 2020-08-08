@@ -505,4 +505,18 @@ Um evento do tipo NavigationEnd é aquele disparado quando a rota termina com su
 Uma instância de Router possui a propriedade events, um Observable que
  nos permite saber a fase atual da rota acessada pela aplicação.
 
+return this.http
+.post(API + '/photos/upload', 
+formData,
+{
+    observe: 'events',
+    reportProgress: true
+}   
+);
+
+.subscribe(
+(event: HttpEvent<any>) => {})
+.pipe(finalize(() => {}
+
+        
 
