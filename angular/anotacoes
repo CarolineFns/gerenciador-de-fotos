@@ -532,5 +532,8 @@ providers: [{
         multi: true
     }]
 
+tabindex=0 -> para o elemento ganhar o foco pra poder usar o teclado 
+(keyup.space)="menu.toggle()" -> apertando o espaço para abrir o menu
+
         
 
