@@ -535,5 +535,11 @@ providers: [{
 tabindex=0 -> para o elemento ganhar o foco pra poder usar o teclado 
 (keyup.space)="menu.toggle()" -> apertando o espaço para abrir o menu
 
-        
+O método StackTrace.fromError transforma a 
+stacktrace de um Error em um array no qual 
+cada item do array é uma stackframe. 
+Sendo um array, podemos aplicar os métodos de 
+transformação presentes em um Array para chegarmos na exibição que desejamos.
 
+npm install stacktrace-js
+npm install @types/stacktrace-js
