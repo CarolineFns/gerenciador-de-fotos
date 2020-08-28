@@ -545,3 +545,18 @@ npm install stacktrace-js
 npm install @types/stacktrace-js
 
 (form.submitted || signupForm.get('password').touched)"
+
+this.router.navigate(['/user', this.userService.getUserName()], { replaceUrl: true });
+
+this.router.navigate(
+[''],
+{
+    queryParams: {
+        fromUrl: state.url
+    }
+}
+);
+
+this.fromUrl
+? this.router.navigateByUrl(this.fromUrl)
+: this.router.navigate(['user', userName]) 
